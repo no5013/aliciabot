@@ -15,7 +15,7 @@ public class FoodService {
             new Shop("เมเจอร์", "Major cineplex"),
             new Shop("ส้มตำส้มตำ", "Som tam"),
             new Shop("เตี๋ยวเรือ", "Noodle (Next to Som tam)"),
-            new Shop("เต้นร้อน", "Foodcourt Boxspace"),
+            new Shop("เต็นท์ร้อน", "Foodcourt Boxspace"),
             new Shop("เบทาโกร", "Betagro", true),
             new Shop("เล้ง", "Leng"),
             new Shop("หมูกรอบ", "Crispy Pork")

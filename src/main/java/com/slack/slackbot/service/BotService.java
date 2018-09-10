@@ -24,9 +24,10 @@ public class BotService {
                 PostMessage postMessage = new PostMessage();
                 postMessage.setChannel(event.getEvent().getChannel());
                 Shop shop = foodService.randomShop();
-                while (shop.isHate())
+                while (shop.isHate()){
                     message += String.format("~%s~ ", shop.toString());
-
+                    shop = foodService.randomShop();
+                }
                 message += shop.toString();
                 postMessage.setText(message);
                 slackService.sendMessage(postMessage);
