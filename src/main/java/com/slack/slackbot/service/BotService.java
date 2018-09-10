@@ -20,10 +20,15 @@ public class BotService {
         if(event.getEvent().getType().equals("app_mention")){
             String text = event.getEvent().getText();
             if (text.contains("สุ่ม")) {
-                Shop shop = foodService.randomShop();
+                String message = "กิน ";
                 PostMessage postMessage = new PostMessage();
                 postMessage.setChannel(event.getEvent().getChannel());
-                postMessage.setText("กินนี่ไหม: " + shop.toString());
+                Shop shop = foodService.randomShop();
+                while (shop.isHate())
+                    message += String.format("~%s~ ", shop.toString());
+
+                message += shop.toString();
+                postMessage.setText(message);
                 slackService.sendMessage(postMessage);
             }
 
@@ -38,8 +43,8 @@ public class BotService {
                     attachment.setColor(Attachment.colorList.get(i % Attachment.colorList.size()));
                     attachment.setText(shop.toString());
                     postMessage.getAttachments().add(attachment);
-                    slackService.sendMessage(postMessage);
                 }
+                slackService.sendMessage(postMessage);
             }
         }
     }

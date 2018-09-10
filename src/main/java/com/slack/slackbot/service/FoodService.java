@@ -11,12 +11,12 @@ import java.util.List;
 public class FoodService {
 
     private List<Shop> shops = Arrays.asList(
-            new Shop("แคนทืันชั้น2", "second floor"),
+            new Shop("แคนทืันชั้น2", "second floor", true),
             new Shop("เมเจอร์", "Major cineplex"),
             new Shop("ส้มตำส้มตำ", "Som tam"),
             new Shop("เตี๋ยวเรือ", "Noodle (Next to Som tam)"),
             new Shop("เต้นร้อน", "Foodcourt Boxspace"),
-            new Shop("เบทาโกร", "Betagro"),
+            new Shop("เบทาโกร", "Betagro", true),
             new Shop("เล้ง", "Leng"),
             new Shop("หมูกรอบ", "Crispy Pork")
     );
