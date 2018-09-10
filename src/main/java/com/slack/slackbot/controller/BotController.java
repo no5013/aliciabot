@@ -18,7 +18,8 @@ public class BotController {
     @PostMapping("/slackbot/events")
     public ResponseEntity<?> postEvent(@RequestBody Event event){
         log.info("{}", event);
-        botService.botReact(event);
+        if(event.getEvent() != null)
+            botService.botReact(event);
         return new ResponseEntity<>(event, HttpStatus.OK);
     }
 }
