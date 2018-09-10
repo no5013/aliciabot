@@ -26,10 +26,7 @@ public class BotService {
                 postMessage.setText("กินนี่ไหม: " + shop.toString());
                 slackService.sendMessage(postMessage);
             }
-        }
 
-        if(event.getEvent().getType().equals("message")){
-            String text = event.getEvent().getText();
             if (text.contains("กิน") && text.contains("ไร")){
                 PostMessage postMessage = new PostMessage();
                 postMessage.setChannel(event.getEvent().getChannel());
