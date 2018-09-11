@@ -33,7 +33,7 @@ public class BotService {
                 slackService.sendMessage(postMessage);
             }
 
-            if (text.contains("กิน") && text.contains("ไร")){
+            if (text.contains("กิน") && (text.contains("ไร") || text.contains("ไหน")) ){
                 PostMessage postMessage = new PostMessage();
                 postMessage.setChannel(event.getEvent().getChannel());
                 postMessage.setText("กินไรกันดี");
